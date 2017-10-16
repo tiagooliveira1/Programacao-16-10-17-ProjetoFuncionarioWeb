@@ -8,10 +8,14 @@
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
 
 <h:head>
-	<title>Cadastro de funcionários</title>
+	<title>Cadastro de funcionários - Cadastro</title>
 </h:head>
 <body>
-	
+	<h:form>
+		<h:commandButton action="#{}" value="Incluir" />
+		
+		<h:commandButton action="#{cadastroContatoVB.consultar()}" value="Voltar" />
+	</h:form>
 
 </body>
 </html>
