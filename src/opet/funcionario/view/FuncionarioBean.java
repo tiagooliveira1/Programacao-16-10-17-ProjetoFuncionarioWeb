@@ -79,7 +79,7 @@ public class FuncionarioBean implements Serializable {
 	}
 	
 	public String pesquisar() {
-		Funcionario funcionario = null;
+		//Funcionario funcionario = null;
 		FacesContext contexto = FacesContext.getCurrentInstance();
 		
 		funcionarioController = new FuncionarioController();

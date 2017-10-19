@@ -28,7 +28,8 @@ public class FuncionarioController {
 	}
 	
 	public List<Funcionario> listarAll() {
-		return null;
+		FuncionarioDAO funcDAO = new FuncionarioDAO();
+		return funcDAO.listAll();
 		
 	}
 
