@@ -12,6 +12,28 @@
 </h:head>
 <body>
 	
+	<h:form>
+		<h:outputText value="Nome:" />
+		<h:inputText id="nome" value="#{funcionarioBean.nomeFuncionario}"
+			size="50" required="true"
+			validatorMessage="Nome deve ter no máximo 50 caracteres">
+			<f:validateLength minimum="0" maximum="50" />
+		</h:inputText>
+		
+		&nbsp;									
+     	<h:message for="nome" infoClass="info" errorClass="error"/>
+		
+		<br />
+
+		
+		<h:messages globalOnly="true" errorcClass="error">
+		</h:messages>		
+		
+		<h:commandButton action="#{funcionarioBean.pesquisar()}" value="Incluir" />
+
+
+		<h:commandButton action="/index" value="Voltar" />
+	</h:form>
 
 </body>
 </html>

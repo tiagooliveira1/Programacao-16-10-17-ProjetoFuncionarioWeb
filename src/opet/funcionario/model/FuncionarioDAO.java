@@ -20,7 +20,6 @@ public class FuncionarioDAO implements IFuncionarioDAO {
 	public boolean incluir(Funcionario funcionario)  {
 		
 		Connection connection = null;
-		Funcionario func = null;
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			System.out.print("Conectando ao banco...");
@@ -30,11 +29,11 @@ public class FuncionarioDAO implements IFuncionarioDAO {
 			PreparedStatement pstmt = connection
 					.prepareStatement("INSERT INTO FUNCIONARIO (IDFUNCIONARIO, NOME, SALARIO, TIPO) values ("
 							+ "coalesce((select max(idfuncionario)+1 from funcionario),1), " + "?,?,?)");
-			pstmt.setString(1, func.getNome());
-			pstmt.setDouble(2, func.getSalario());
-			if (func instanceof Professor)
+			pstmt.setString(1, funcionario.getNome());
+			pstmt.setDouble(2, funcionario.getSalario());
+			if (funcionario instanceof Professor)
 				pstmt.setInt(3, 3);
-			else if (func instanceof Secretario)
+			else if (funcionario instanceof Secretario)
 				pstmt.setInt(3, 2);
 			else
 				pstmt.setInt(3, 1);

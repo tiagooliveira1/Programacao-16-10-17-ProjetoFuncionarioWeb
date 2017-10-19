@@ -14,12 +14,15 @@
 
 	<h:form>
 		<h:outputText value="Nome:" />
-		<h:inputText id="nome" value="#{funcionarioBean.funcionario.nome}"
+		<h:inputText id="nome" value="#{funcionarioBean.nomeFuncionario}"
 			size="50" required="true"
 			validatorMessage="Nome deve ter no máximo 50 caracteres"
 			requiredMessage="Nome é obrigatório">
 			<f:validateLength minimum="1" maximum="50" />
 		</h:inputText>
+		
+		&nbsp;									
+     	<h:message for="nome" infoClass="info" errorClass="error"/>
 		
 		<br />
 
@@ -35,14 +38,17 @@
 		<br />
 		
 		<h:outputText value="Salário:" />
-		<h:inputText id="salario" value="#{funcionarioBean.funcionario.salario}"
+		<h:inputText id="salario" value="#{funcionarioBean.salarioFuncionario}"
 			size="9" >
 		</h:inputText>
 		
 		<br />
 		
-
+		<h:messages globalOnly="true" errorcClass="error">
+		</h:messages>		
+		
 		<h:commandButton action="#{funcionarioBean.incluir()}" value="Incluir" />
+
 
 		<h:commandButton action="/index" value="Voltar" />
 	</h:form>
