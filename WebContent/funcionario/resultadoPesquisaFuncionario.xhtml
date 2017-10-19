@@ -13,7 +13,7 @@
 <body>
 	<h1>Aula 16/10/2017 - Cadastro de Funcionários</h1>
 	<h:form>
-		<h:dataTable value="#{FuncionarioBean.listaFuncionarios}" var="funcionario"
+		<h:dataTable value="#{funcionarioBean.listaFuncionarios}" var="funcionario"
 			styleClass="order-table" headerClass="order-table-header"
 			rowClasses="order-table-odd-row,order-table-even-row">
 
@@ -28,13 +28,7 @@
 			</h:column>
 
 
-			<h:column>
-				<f:facet name="header">Alt.</f:facet>
-				<h:commandButton
-					action="#{pesquisaContatoVB.alterarContato(contato)}"
-					image="/imagens/update.png">
-				</h:commandButton>
-			</h:column>
+			
 		</h:dataTable>
 	</h:form>
 

@@ -33,6 +33,8 @@ public class FuncionarioBean implements Serializable {
 	
 	private List<Funcionario> listaFuncionarios;
 	
+	
+
 	public FuncionarioBean() {
 		//funcionario = new Diretor("", 0.0);
 		setTipoFuncionario("");
@@ -138,6 +140,14 @@ public class FuncionarioBean implements Serializable {
 
 	public void setSalarioFuncionario(Double salarioFuncionario) {
 		this.salarioFuncionario = salarioFuncionario;
+	}
+	
+	public List<Funcionario> getListaFuncionarios() {
+		return listaFuncionarios;
+	}
+
+	public void setListaFuncionarios(List<Funcionario> listaFuncionarios) {
+		this.listaFuncionarios = listaFuncionarios;
 	}
 
 }
